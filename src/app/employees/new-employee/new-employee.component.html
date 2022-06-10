@@ -1,0 +1,118 @@
+<h1>Enter employee data</h1>
+<form [formGroup]="service.form"  class="normal-form">
+<mat-grid-list cols="2" rowHeight="700px">
+<mat-grid-tile>
+    <div class="controles-container">
+        <input type="hidden" formControlName="$key">
+        <mat-form-field>
+            <input type ="text" formControlName="name" matInput placeholder="Name"> 
+            <mat-error>Please enter only alphabets</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type ="date" formControlName="dateOfBirth" matInput placeholder="Date of birth"> 
+            
+        </mat-form-field>
+        <mat-form-field>
+            <input type ="text" formControlName="mobileNo" matInput placeholder="Mobile no"> 
+            <mat-error>Please enter correct numbers </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type ="text" formControlName="nationality" matInput placeholder="Nationality"> 
+            <mat-error>Please enter only alphabets</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-select formControlName="religion" matInput placeholder="Religion"> 
+                <!-- <mat-option>None</mat-option> -->
+                <ng-container *ngFor="let religion of religions">
+                   <mat-option value="{{religion.value}}">{{religion.value}}</mat-option>
+                </ng-container>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <!-- <input formControlName="appointmentDate" matInput [matDatepicker]="picker1"  placeholder="Appointment Date"> 
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker> -->
+            <input type ="date" formControlName="appointmentDate" matInput placeholder="Appointment Date"> 
+        </mat-form-field>
+        <mat-form-field>
+            <input type ="text" formControlName="passportNo" matInput placeholder="Passport no"> 
+            <mat-error>Please enter only numbers 10 length</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type ="text" formControlName="department" matInput placeholder="Department"> 
+            <mat-error>Please enter only alphabets</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type ="text" formControlName="city" matInput placeholder="City"> 
+            <mat-error>Please enter only alphabets</mat-error>
+        </mat-form-field>
+        <div class ="button-row">
+            <button mat-raised-button color="primary" type ="submit" (click)="onSubmit()"[disabled]="service.form.invalid" routerLink="/showdata"  >Save Employee</button>
+            <button mat-raised-button color="primary" type ="showdata"  routerLink="/showdata" >Show data</button>
+           
+            
+            <!-- <button mat-raised-button color="primary" type ="updatedata"  (click)="onUpdate()" routerLink="/showdata" >Update</button> -->
+          
+        </div>
+        
+    </div>
+</mat-grid-tile>
+<mat-grid-tile>
+   <div class="controles-container">
+    <mat-form-field>
+        <input type ="text" formControlName="fatherName" matInput placeholder="Father Name"> 
+        <mat-error>Please enter only alphabets</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input type ="text" formControlName="nicNo" matInput placeholder="NIC No."> 
+        <mat-error>Please enter only numbers with - </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input type ="text" formControlName="landLineNo" matInput placeholder="LandLine No."> 
+        <mat-error>Please enter only numbers of 11 length</mat-error>
+    </mat-form-field>
+    <label id="example-radio-group-label">Select Gender</label>
+ 
+    <div class="add-bottom-padding">
+        <mat-radio-group formControlName="gender">
+          <mat-radio-button value="Male">Male</mat-radio-button>
+          <mat-radio-button value="Female">Female</mat-radio-button>
+          <!-- <mat-radio-button value="3">Other</mat-radio-button> -->
+        </mat-radio-group>
+      </div>
+      <label id="example-radio-group-label1">Select Status <br/>
+
+      </label>
+      
+      <div class="add-bottom-padding">
+        <mat-radio-group formControlName="active">
+          <mat-radio-button value="Active">Active</mat-radio-button>
+          <mat-radio-button value="InActive">InActive</mat-radio-button>
+          <!-- <mat-radio-button value="3">Other</mat-radio-button> -->
+        </mat-radio-group>
+
+      </div>
+      <mat-form-field>
+        <!-- <input formControlName="joiningDate" matInput [matDatepicker]="picker2" placeholder="Joining Date"> 
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker> -->
+        <input type ="date" formControlName="joiningDate" matInput placeholder="Joining Date"> 
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select formControlName="designation" matInput placeholder="Designation"> 
+            <!-- <mat-option>None</mat-option> -->
+            <ng-container *ngFor="let designation of designations">
+               <mat-option value="{{designation.value}}">{{designation.value}}</mat-option>
+            </ng-container>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <input formControlName="streetAddress" matInput placeholder="Street Address"> 
+    </mat-form-field>
+   </div>
+
+</mat-grid-tile>
+</mat-grid-list>
+
+ </form>
+

@@ -1,0 +1,52 @@
+<p>readdata works!</p>
+
+<div class="mat-elevation-z8">
+    <mat-table [dataSource]="listData">
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns:displayedColumns;"></mat-row>
+        <ng-container matColumnDef="uid">
+            <mat-header-cell *matHeaderCellDef>UID</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.$key}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="city">
+            <mat-header-cell *matHeaderCellDef>City</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.city}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="department">
+            <mat-header-cell *matHeaderCellDef>Department</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.department}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="designation">
+            <mat-header-cell *matHeaderCellDef>Designation</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.designation}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="fathername">
+            <mat-header-cell *matHeaderCellDef>Father Name</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.fatherName}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="gender">
+            <mat-header-cell *matHeaderCellDef>Gender</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.gender}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="landline">
+            <mat-header-cell *matHeaderCellDef>landLineNo</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.landLineNo}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="updatebutton">
+            <mat-header-cell *matHeaderCellDef>UPDATE</mat-header-cell>
+            <mat-cell *matCellDef="let element"> <button mat-raised-button color="primary" type ="updatedata" (click)="onUpdate(element)" routerLink="">UPDATE</button></mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="deletebutton">
+            <mat-header-cell *matHeaderCellDef>DELETE</mat-header-cell>
+            <mat-cell *matCellDef="let element"> <button mat-raised-button color="primary" type ="deletedata" (click)="onDelete(element.$key)" >DELETE</button></mat-cell>
+        </ng-container>
+        
+        
+    </mat-table>
+</div>
+
+
+<button mat-raised-button color="primary" type ="Back"routerLink="" >BACK</button>
+
+<!-- <button mat-raised-button color="primary" type ="update" (click)="onUpdate()">Update</button> -->
+<!-- "city": "lahore", "department": "admin", "designation": "1", "fatherName": "khan", "gender": "1", "landLineNo": "546546" -->
